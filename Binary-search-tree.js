@@ -9,7 +9,7 @@ class Node {
 class BST {
   constructor(value) {
     this.root = new Node(value);
-    this.count = 0;
+    this.count = 1;
   }
 
   size() {
@@ -91,30 +91,62 @@ class BST {
   // in-order
   // left, root, right
   dfsInOrder() {
-    let result = []
-   
-    const tranverse = node => {
-        if (node.left) tranverse(node.left)
-    }
+    let result = [];
 
-    return results
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      result.push(node.value);
+      if (node.right) traverse(node.right);
+    };
+
+    return result;
   }
 
   // pre-order
   // root, left, right
   dfsPreOrder() {
+    let result = [];
 
+    const traverse = (node) => {
+      result.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+
+    return result;
   }
 
   // post-order
   // left, right, root
   dfsPostOrder() {
+    let result = [];
 
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      result.push(node.value);
+    };
+
+    return result;
   }
 
   // breadth first search - level by level
   // use a queue
   bfs() {
+    let result = [];
+    let queue = [];
 
+    queue.push(this.root)
+
+    while(queue.length) {
+      let currentNode = queue.shift();
+
+      result.push(currentNode.value)
+
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
+    }
+
+    return result
   }
 }
