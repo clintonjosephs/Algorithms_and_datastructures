@@ -17,21 +17,27 @@ N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
 */
 
+const positiveNumber = (array) => {
+  let b = 1;
 
-let b = 1;
+  let newArray = array.sort((x, b) => x - b);
+  newArray = [...new Set(newArray)];
+  console.log(newArray);
 
-let newArray = A.sort((a, b) => b < a);
-newArray = [...new Set(newArray)];
-
-for (let i = 0; i < newArray.length; i++) {
+  for (let i = 0; i < newArray.length; i++) {
     if (newArray[i] !== b) {
-        return b;
-    } 
+      return b;
+    }
     b++;
-}
+  }
 
-if (newArray[newArray.length - 1] <= 0 ) {
+  if (newArray[newArray.length - 1] <= 0) {
     return 1;
-}
+  }
 
-return newArray[newArray.length - 1] + 1;
+  return newArray[newArray.length - 1] + 1;
+};
+
+const num = positiveNumber([1, 3, 6, 4, 1, 2]);
+
+console.log(num);
