@@ -21,8 +21,7 @@ const positiveNumber = (array) => {
   let b = 1;
 
   let newArray = array.sort((x, b) => x - b);
-  newArray = [...new Set(newArray)];
-  console.log(newArray);
+  newArray = [...new Set(newArray)]; [1,2,3,5,6,7,8,9,10,11]
 
   for (let i = 0; i < newArray.length; i++) {
     if (newArray[i] !== b) {
