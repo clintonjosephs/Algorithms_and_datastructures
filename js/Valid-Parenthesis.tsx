@@ -100,7 +100,7 @@ const closingBraces = (value: string): boolean => {
   
   const tester = (recived, expected, testCase) => {
     if (recived === expected) {
-      console.log("Pass!")
+      console.log("Test Passed!")
     } else {
       console.log(`Fail. Expected ${expected} for ${testCase} but recived ${recived}`)
     }
