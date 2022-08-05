@@ -72,4 +72,4 @@ const numberOfCarryOperations = (x, y) => {
     return count;
 };
 
-console.log(numberOfCarryOperations(999045, 1055));
+console.log(numberOfCarryOperations(999045, 1034));
